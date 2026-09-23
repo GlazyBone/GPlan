@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿//Copyright GPlan Project. All Rights Reserved.
 
 #pragma once
 
@@ -7,21 +7,22 @@
 #include "Logging/LogMacros.h"
 #include "GPPlayerCharacter.generated.h"
 
+
 class USpringArmComponent;
 class UCameraComponent;
 
-UCLASS(config=Game)
+UCLASS()
 class GPLAN_API AGPPlayerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
 	/** Camera boom positioning the camera behind the character */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	USpringArmComponent* CameraBoom;
+	TObjectPtr<USpringArmComponent> CameraBoom;
 
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
-	UCameraComponent* FollowCamera;
+	TObjectPtr<UCameraComponent> FollowCamera;
 	
 
 public:

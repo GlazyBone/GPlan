@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿//Copyright GPlan Project. All Rights Reserved.
 
 
 #include "GPPlayerController.h"
@@ -15,8 +15,7 @@ void AGPPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// Add Input Mapping Context
-
+	//Add Input Mapping Context
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
 	{
 		if (DefaultMappingContext)
@@ -31,54 +30,50 @@ void AGPPlayerController::BeginPlay()
 void AGPPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
-		// Set up action bindings
+		//Set up action bindings
 	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent)) 
 	{
 
-		// Jumping
+		//Jumping
 		if(JumpAction)
 		{
 			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AGPPlayerController::Input_Jump);
 			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AGPPlayerController::Input_StopJumping);
 		}
 
-		// Moving
+		//Moving
 		if (MoveAction)
 		{
 			EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AGPPlayerController::Input_Move);
 		}
 
-		// Looking
+		//Looking
 		if (LookAction)
 		{
 			EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AGPPlayerController::Input_Look);
 		}
-	}
-	else
-	{
-		//UE_LOG(LogTemplateCharacter, Error, TEXT("'%s' Failed to find an Enhanced Input component! This template is built to use the Enhanced Input system. If you intend to use the legacy system, then you will need to update this C++ file."), *GetNameSafe(this));
 	}
 
 }
 
 void AGPPlayerController::Input_Move(const FInputActionValue& Value)
 {
-	// input is a Vector2D
+	//input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
 
 	if (APawn* ControlledPawn = GetPawn())
 	{
-		// find out which way is forward
+		//find out which way is forward
 		const FRotator Rotation = ControlledPawn->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
-		// get forward vector
+		//get forward vector
 		const FVector ForwardDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 
-		// get right vector 
+		//get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
-		// add movement 
+		//add movement 
 		ControlledPawn->AddMovementInput(ForwardDirection, MovementVector.Y);
 		ControlledPawn->AddMovementInput(RightDirection, MovementVector.X);
 	} 
@@ -86,10 +81,10 @@ void AGPPlayerController::Input_Move(const FInputActionValue& Value)
 
 void AGPPlayerController::Input_Look(const FInputActionValue& Value)
 {
-	// input is a Vector2D
+	//input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 
-	// add yaw and pitch input to controller
+	//add yaw and pitch input to controller
 	AddYawInput(LookAxisVector.X);
 	AddPitchInput(LookAxisVector.Y);
 

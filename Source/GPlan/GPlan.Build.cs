@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿//Copyright GPlan Project. All Rights Reserved.
 
 using UnrealBuildTool;
 

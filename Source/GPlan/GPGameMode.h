@@ -1,13 +1,13 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿//Copyright GPlan Project. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
+#include "GameFramework/GameMode.h"
 #include "GPGameMode.generated.h"
 
 UCLASS(minimalapi)
-class AGPGameMode : public AGameModeBase
+class AGPGameMode : public AGameMode
 {
 	GENERATED_BODY()
 

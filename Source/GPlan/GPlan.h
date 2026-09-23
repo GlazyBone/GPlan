@@ -1,9 +1,9 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+ï»¿//Copyright GPlan Project. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 
 
-//Õû¸öÏîÄ¿µÄ»ù´¡LogÀà±ð
+//æ•´ä¸ªé¡¹ç›®çš„åŸºç¡€Logç±»åˆ«
 DECLARE_LOG_CATEGORY_EXTERN(LogGP, Log, All);

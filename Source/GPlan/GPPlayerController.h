@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+ï»¿//Copyright GPlan Project. All Rights Reserved.
 
 #pragma once
 
@@ -25,25 +25,24 @@ protected:
 	virtual void BeginPlay() override;
 	virtual void SetupInputComponent() override;
 
-	//---ÊäÈë×Ê²úÅäÖÃ---//
+	//---è¾“å…¥èµ„äº§é…ç½®---//
 	/** MappingContext */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
-	UInputMappingContext* DefaultMappingContext;
+	TObjectPtr<UInputMappingContext> DefaultMappingContext;
 
 	/** Jump Input Action */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
-	UInputAction* JumpAction;
+	TObjectPtr<UInputAction> JumpAction;
 
 	/** Move Input Action */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
-	UInputAction* MoveAction;
-
+	TObjectPtr<UInputAction> MoveAction;
 	/** Look Input Action */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
-	UInputAction* LookAction;
+	TObjectPtr<UInputAction> LookAction;
 
 private:
-	//---ÊäÈë»Øµ÷º¯Êı£¨´¥·¢Ê±×Ô¶¯µ÷ÓÃ£©---//
+	//---è¾“å…¥å›è°ƒå‡½æ•°ï¼ˆè§¦å‘æ—¶è‡ªåŠ¨è°ƒç”¨ï¼‰---//
 	void Input_Move(const FInputActionValue& Value);
 	void Input_Look(const FInputActionValue& Value);
 	void Input_Jump();
