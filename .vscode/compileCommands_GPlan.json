@@ -1,0 +1,106 @@
+[
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPGameMode.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPGameMode.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPHealthComponent.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPHealthComponent.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPPlayerCharacter.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPPlayerCharacter.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPPlayerController.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPPlayerController.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPProjectile.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPProjectile.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPlan.Build.cs",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPlan.cpp",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	},
+	{
+		"file": "W:\\Unrel Projects\\GPlan\\Source\\GPlan\\GPlan.h",
+		"arguments": [
+			"W:\\VisualStudio\\2022\\Enterprise\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@W:\\Unrel Projects\\GPlan\\.vscode\\compileCommands_GPlan\\GPlan.1.rsp"
+		],
+		"directory": "W:\\UE5\\UE_5.5\\Engine\\Source"
+	}
+]

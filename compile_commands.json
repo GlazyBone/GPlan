@@ -1,0 +1,80 @@
+[
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPGameMode.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPGameMode.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPGameMode.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPHealthComponent.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPHealthComponent.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPHealthComponent.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPPlayerCharacter.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerCharacter.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerCharacter.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPPlayerController.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerController.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerController.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPProjectile.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPProjectile.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPProjectile.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/UnrealEditor/Inc/GPlan/UHT/GPlan.init.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPlan.init.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPlan.init.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/PerModuleInline.gen.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/PerModuleInline.gen.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/PerModuleInline.gen.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPGameMode.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPGameMode.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPGameMode.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPHealthComponent.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPHealthComponent.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPHealthComponent.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPPlayerCharacter.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerCharacter.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerCharacter.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPPlayerController.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerController.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPPlayerController.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPProjectile.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPProjectile.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPProjectile.cpp.obj"
+	},
+	{
+		"file": "W:/Unrel Projects/GPlan/Source/GPlan/GPlan.cpp",
+		"command": "W:/VisualStudio/2022/Enterprise/VC/Tools/Llvm/x64/bin/clang-cl.exe @\"W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPlan.cpp.obj.rsp\" ",
+		"directory": "W:/UE5/UE_5.5/Engine/Source",
+		"output": "W:/Unrel Projects/GPlan/Intermediate/Build/Win64/x64/UnrealEditor/Development/GPlan/GPlan.cpp.obj"
+	}
+]

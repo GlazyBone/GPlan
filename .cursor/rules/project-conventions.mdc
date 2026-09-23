@@ -1,0 +1,66 @@
+---
+description: GPlan 项目级约定——技术栈、命名、UE C++ 习惯、模块依赖与禁止事项
+alwaysApply: true
+---
+
+# GPlan 项目约定
+
+## 1. 技术栈与架构
+
+- **引擎**：Unreal Engine 5.5；主模块 `GPlan`（Runtime，`LoadingPhase: Default`）。
+- **输入**：Enhanced Input；输入绑定与回调放在 `AGPPlayerController`，不放在 Character。
+- **架构**：单模块第三人称游戏；职责拆分示例——
+  - `AGPGameMode`：模式入口
+  - `AGPPlayerCharacter`：Pawn / 相机 / 移动
+  - `AGPPlayerController`：输入
+  - `UGPHealthComponent`：血量与伤害事件
+  - `AGPProjectile`：投射物
+- **日志**：统一使用 `LogGP`（见 `GPlan.h`）：`UE_LOG(LogGP, Display, ...)`。
+- **插件**：`GameplayAbilities` 已在 `.uproject` 启用；使用前须同步加入 `GPlan.Build.cs` 依赖。
+- 网格、动画蓝图等资产引用放在 Blueprint，C++ 不硬编码 Content 路径（`ConstructorHelpers` 仅在确有必要时使用）。
+
+## 2. 命名规范
+
+| 类型 | 约定 | 示例 |
+|------|------|------|
+| 类型前缀 | `GP` + UE 前缀 | `AGPPlayerCharacter`, `UGPHealthComponent` |
+| 文件名 | 与主类同名 | `GPHealthComponent.h/.cpp` |
+| API 宏 | `GPLAN_API` | 导出到模块外的 UCLASS |
+| bool | `b` 前缀 | `bIsDead` |
+| 输入回调 | `Input_` | `Input_Move`, `Input_Jump` |
+| 动态委托 | `FOn…Sign` | `FOnHPChangedSign`, `FOnDeathSign` |
+| UPROPERTY Category | 简短英文 | `Camera`, `Input`, `HP`, `Bullet` |
+| 日志类别 | `LogGP` | 勿另开平行项目日志 |
+
+## 3. C++ / UE 代码习惯
+
+- Header：`#pragma once` → 必要 include → 前向声明 → `*.generated.h`（必须最后）。
+- 实现文件先 include 对应 `.h`，再按需 include；构造函数用 `CreateDefaultSubobject` + `SetupAttachment`。
+- 子对象常用：`VisibleAnywhere, BlueprintReadOnly` + `meta = (AllowPrivateAccess = "true")`（私有/受限成员时）。
+- 可调数值：`EditDefaultsOnly`（或 Blueprint 可配）；只读状态：`VisibleAnywhere` + `BlueprintReadOnly`。
+- 不需要每帧逻辑时关闭 Tick：`PrimaryComponentTick.bCanEverTick = false` / Actor 同理。
+- Override 必须先 `Super::`；指针使用前判空；伤害等数值做边界保护（如血量不为负）。
+- 对外事件优先 `DECLARE_DYNAMIC_MULTICAST_DELEGATE_*` + `BlueprintAssignable`。
+- 业务注释可用中文；保持版权头与现有文件风格一致。
+
+```cpp
+// ❌ BAD：输入绑在 Character；乱开 Tick；硬编资产路径
+// ✅ GOOD：PC 绑定 Enhanced Input；组件默认关 Tick；资产在 BP 指定
+```
+
+## 4. 模块与依赖
+
+- 源码根：`Source/GPlan/`；Target：`GPlan` / `GPlanEditor`（`BuildSettingsVersion.V5`，`Unreal5_5` include order）。
+- `GPlan.Build.cs` 当前 Public：`Core`, `CoreUObject`, `Engine`, `InputCore`, `EnhancedInput`；`PCHUsage = UseExplicitOrSharedPCHs`。
+- 新增引擎/插件 API 时：先改 `Build.cs`（及必要时 `.uproject`），再写代码。
+- 保持单 Runtime 模块，除非明确需要拆 Editor/独立插件模块。
+- 跨模块导出类必须带 `GPLAN_API`。
+
+## 5. 禁止事项
+
+- 不要改用非 `GP` 的项目类型前缀，或拆散 `GPXxx` 文件命名。
+- 不要在 Character 上新增主输入绑定（应扩展 `AGPPlayerController`）。
+- 不要无必要开启 Tick；不要省略 `Super::`；不要跳过空指针检查。
+- 不要在 C++ 中大面积硬编码 `/Game/...` 资产路径。
+- 不要引入未写入 `Build.cs` 的模块依赖；不要擅自新增平行日志类别替代 `LogGP`。
+- 不要提交无关格式化大爆炸或与任务无关的文件改动。

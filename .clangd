@@ -1,0 +1,29 @@
+CompileFlags:
+  CompilationDatabase: .
+  Add:
+    - -Wno-error
+    - -Wno-unused-parameter
+    - -Wno-unused-variable
+    - -Wno-microsoft-include
+    - -ferror-limit=0
+    - -DGPLAN_API=
+    - -DWITH_EDITOR=1
+    - -DUE_BUILD_DEVELOPMENT=1
+
+Diagnostics:
+  Suppress:
+    - missing_type_specifier
+    - invalid_token_after_toplevel_declarator
+    - typecheck_decl_incomplete_type
+    - expected_unqualified_id
+    - ovl_no_viable_function_in_call
+    - incomplete_nested_name_spec
+    - typecheck_comparison_of_distinct_pointers
+    - no_matching_function
+    - expected_class_or_namespace
+    - expr_not_cce
+  UnusedIncludes: None
+  MissingIncludes: None
+
+Index:
+  Background: Build

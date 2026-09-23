@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿//Copyright GPlan Project. All Rights Reserved.
 
 #include "GPPlayerCharacter.h"
 #include "Engine/LocalPlayer.h"

@@ -1,0 +1,627 @@
+{
+	"folders": [
+		{
+			"name": "GPlan",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "W:\\UE5\\UE_5.5"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.windows": {
+			"PATH": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+			"DOTNET_ROOT": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+			"DOTNET_HOST_PATH": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "GPlan Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlan Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlan Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlan Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Test",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Test",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlan Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Test",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Shipping",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Shipping",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlan Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlan Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlan",
+					"Win64",
+					"Shipping",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlanEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Debug",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlanEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"DebugGame",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"GPlanEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"label": "GPlanEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"GPlanEditor",
+					"Win64",
+					"Development",
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "W:\\UE5\\UE_5.5"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch GPlan (Debug)",
+				"request": "launch",
+				"program": "W:\\Unrel Projects\\GPlan\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "GPlan Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlan (DebugGame)",
+				"request": "launch",
+				"program": "W:\\Unrel Projects\\GPlan\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "GPlan Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlan (Development)",
+				"request": "launch",
+				"program": "W:\\Unrel Projects\\GPlan\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "GPlan Win64 Development Build",
+				"args": [
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlan (Test)",
+				"request": "launch",
+				"program": "W:\\Unrel Projects\\GPlan\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "GPlan Win64 Test Build",
+				"args": [
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlan (Shipping)",
+				"request": "launch",
+				"program": "W:\\Unrel Projects\\GPlan\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "GPlan Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlanEditor (Debug)",
+				"request": "launch",
+				"program": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "GPlanEditor Win64 Debug Build",
+				"args": [
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject"
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlanEditor (DebugGame)",
+				"request": "launch",
+				"program": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "GPlanEditor Win64 DebugGame Build",
+				"args": [
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject"
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Launch GPlanEditor (Development)",
+				"request": "launch",
+				"program": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "GPlanEditor Win64 Development Build",
+				"args": [
+					"W:\\Unrel Projects\\GPlan\\GPlan.uproject"
+				],
+				"cwd": "W:\\UE5\\UE_5.5",
+				"stopAtEntry": false,
+				"console": "integratedTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "W:\\UE5\\UE_5.5\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"W:\\UE5\\UnrealEngine-5.5.4-release": "W:\\UE5\\UE_5.5"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "W:\\UE5\\UE_5.5\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=W:\\Unrel Projects\\GPlan\\GPlan.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64;${env:PATH}",
+					"DOTNET_ROOT": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64",
+					"DOTNET_HOST_PATH": "W:\\UE5\\UE_5.5\\Engine\\Binaries\\ThirdParty\\DotNet\\8.0.300\\win-x64\\dotnet.exe",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "integratedTerminal",
+				"stopAtEntry": false,
+				"cwd": "W:\\UE5\\UE_5.5"
+			}
+		]
+	}
+}
