@@ -3,6 +3,7 @@
 
 #include "GPHealthComponent.h"
 #include "GPlan.h"
+#include "GameFramework/Actor.h"
 
 UGPHealthComponent::UGPHealthComponent()
 {
@@ -32,7 +33,7 @@ void UGPHealthComponent::HandleTakeAnyDamage(AActor* DamagedActor, float Damage,
 	const float ActualDamage = FMath::Min(CurrentHP, Damage);
 	CurrentHP -= ActualDamage;
 
-	UE_LOG(LogGP, Display, TEXT("[%s] Took %f damage! Current Health: %f/%f"), *GetNameSafe(GetOwner()), ActualDamage, CurrentHP, MaxHP);
+	UE_LOG(LogGP, Display, TEXT("[%s] Took %f damage! Current HP: %f/%f"), *GetNameSafe(GetOwner()), ActualDamage, CurrentHP, MaxHP);
 
 	//发送通知
 	OnHPChanged.Broadcast(CurrentHP, MaxHP, -ActualDamage);

@@ -6,6 +6,8 @@
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
 #include "GameFramework/Character.h"
+#include "Engine/LocalPlayer.h"
+#include "Characters/GPPlayerCharacter.h"
 
 AGPPlayerController::AGPPlayerController()
 {
@@ -23,19 +25,19 @@ void AGPPlayerController::BeginPlay()
 			Subsystem->AddMappingContext(DefaultMappingContext, 0);
 		}
 	}
-	
+
 
 }
 
 void AGPPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
-		//Set up action bindings
-	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent)) 
+	//Set up action bindings
+	if (UEnhancedInputComponent* EnhancedInputComponent = Cast<UEnhancedInputComponent>(InputComponent))
 	{
 
 		//Jumping
-		if(JumpAction)
+		if (JumpAction)
 		{
 			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &AGPPlayerController::Input_Jump);
 			EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &AGPPlayerController::Input_StopJumping);
@@ -51,6 +53,18 @@ void AGPPlayerController::SetupInputComponent()
 		if (LookAction)
 		{
 			EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AGPPlayerController::Input_Look);
+		}
+		//Firing
+		if (FireAction)
+		{
+			//按下开火键
+			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Started, this, &AGPPlayerController::Input_StartFire);
+
+			//松开开火键
+			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Completed, this, &AGPPlayerController::Input_StopFire);
+
+			//输入取消时也停止开火
+			EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Canceled, this, &AGPPlayerController::Input_StopFire);
 		}
 	}
 
@@ -76,7 +90,7 @@ void AGPPlayerController::Input_Move(const FInputActionValue& Value)
 		//add movement 
 		ControlledPawn->AddMovementInput(ForwardDirection, MovementVector.Y);
 		ControlledPawn->AddMovementInput(RightDirection, MovementVector.X);
-	} 
+	}
 }
 
 void AGPPlayerController::Input_Look(const FInputActionValue& Value)
@@ -103,5 +117,21 @@ void AGPPlayerController::Input_StopJumping()
 	if (ACharacter* ControlledCharacter = Cast<ACharacter>(GetPawn()))
 	{
 		ControlledCharacter->StopJumping();
+	}
+}
+
+void AGPPlayerController::Input_StartFire()
+{
+	if (AGPPlayerCharacter* ControlledCharacter = Cast<AGPPlayerCharacter>(GetPawn()))
+	{
+		ControlledCharacter->StartWeaponFire();
+	}
+}
+
+void AGPPlayerController::Input_StopFire()
+{
+	if (AGPPlayerCharacter* ControlledCharacter = Cast<AGPPlayerCharacter>(GetPawn()))
+	{
+		ControlledCharacter->StopWeaponFire();
 	}
 }

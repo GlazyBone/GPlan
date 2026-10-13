@@ -10,15 +10,13 @@
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
-/**
- * 
- */
+
 UCLASS()
 class GPLAN_API AGPPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-public: 	
+
+public:
 	AGPPlayerController();
 
 protected:
@@ -37,9 +35,14 @@ protected:
 	/** Move Input Action */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
 	TObjectPtr<UInputAction> MoveAction;
+
 	/** Look Input Action */
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
 	TObjectPtr<UInputAction> LookAction;
+
+	/** Fire Input Action */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Input)
+	TObjectPtr<UInputAction> FireAction;
 
 private:
 	//---输入回调函数（触发时自动调用）---//
@@ -47,4 +50,6 @@ private:
 	void Input_Look(const FInputActionValue& Value);
 	void Input_Jump();
 	void Input_StopJumping();
+	void Input_StartFire();
+	void Input_StopFire();
 };

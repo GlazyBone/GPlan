@@ -1,0 +1,12 @@
+root = true
+
+# GPlan 源码编码统一：UTF-8 带签名（BOM）
+# 放到项目根目录（与 GPlan.uproject 同级）后：
+#   - VS2022 保存任何 .h/.cpp/.cs 时自动按 UTF-8 BOM 落盘（无需再手动"高级保存选项"）
+#   - Cursor/VSCode 装 EditorConfig 扩展后同样生效
+# 建议提交进 Git，团队/未来的自己共享同一规则
+
+[*.{h,cpp,cs}]
+charset = utf-8-bom
+end_of_line = crlf
+insert_final_newline = true

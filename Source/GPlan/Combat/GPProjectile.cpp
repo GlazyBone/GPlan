@@ -1,17 +1,18 @@
 ﻿//Copyright GPlan Project. All Rights Reserved.
 
 
-#include "GPProjectile.h"
+#include "Combat/GPProjectile.h"
 #include "Components/SphereComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Kismet/GameplayStatics.h" 
 #include "GPlan.h"
+#include "GameFramework/DamageType.h"
+#include "GameFramework/Pawn.h"
 
-// Sets default values
 AGPProjectile::AGPProjectile()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;//关闭自身Tick
 
 	//创建组件
@@ -19,9 +20,9 @@ AGPProjectile::AGPProjectile()
 	BulletMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BulletMesh"));
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 
-	//把子弹碰撞设为根节点
+	//把子弹碰撞框设为根节点
 	RootComponent = BulletCollision;
-	//子弹模型挂在子弹碰撞下面
+	//子弹模型挂在子弹碰撞框下面
 	BulletMesh->SetupAttachment(BulletCollision);
 
 	//配置碰撞球体大小与碰撞通道
@@ -43,7 +44,6 @@ AGPProjectile::AGPProjectile()
 
 }
 
-// Called when the game starts or when spawned
 void AGPProjectile::BeginPlay()
 {
 	Super::BeginPlay();
@@ -54,22 +54,31 @@ void AGPProjectile::BeginPlay()
 
 void AGPProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
-	//撞到的目标不能为空，且不能是子弹自己，也不能是开枪的玩家自己
-	if (OtherActor && (OtherActor != this) && (OtherActor != GetInstigator()))
+	//无效目标或当前子弹本身
+	if (!OtherActor || OtherActor == this)
 	{
-		UE_LOG(LogGP, Display, TEXT("子弹命中了: %s! 造成 %f 点伤害"), *GetNameSafe(OtherActor), Damage);
-
-		//施加伤害
-		//如果打中的Actor挂了GPHealthComponent，就会触发扣血
-		UGameplayStatics::ApplyDamage(
-			OtherActor,                  //受击者
-			Damage,                      //伤害数值
-			GetInstigatorController(),   //开枪者的Controller
-			this,                        //造成伤害的物理Actor
-			UDamageType::StaticClass()   //伤害类型
-		);
-
-		//销毁子弹
-		Destroy();
+		return;
 	}
+
+	//不处理自己的武器和开火者
+	if (OtherActor == GetOwner() || OtherActor == GetInstigator())
+	{
+		return;
+	}
+
+	//不允许子弹之间互相造成伤害
+	if (OtherActor->IsA(AGPProjectile::StaticClass()))
+	{
+		return;
+	}
+
+	//正常命中目标
+	UE_LOG(LogGP, Display, TEXT("子弹命中了: %s! 造成 %f 点伤害"), *GetNameSafe(OtherActor), Damage);
+
+	//如果打中的Actor挂了GPHealthComponent，就会触发扣血
+	//								受击者，	伤害数值	，	开枪者的Controller，	造成伤害的物理Actor，	伤害类型
+	UGameplayStatics::ApplyDamage(OtherActor, Damage, GetInstigatorController(), this, UDamageType::StaticClass());
+
+	//销毁子弹
+	Destroy();
 }
