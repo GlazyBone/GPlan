@@ -42,16 +42,6 @@ void AGPEnemyDummy::BeginPlay()
 
 void AGPEnemyDummy::EnemyDead(AActor* DamageCauser)
 {
-	//如果已经死亡则返回
-	if (bEnemyDead)
-	{
-		return;
-	}
-
-	//打开已死亡标记并输出日志
-	bEnemyDead = true;
-	UE_LOG(LogGP, Display, TEXT("[%s] 已死亡，伤害来源：%s"), *GetName(), *GetNameSafe(DamageCauser));
-
 	//停止角色移动
 	GetCharacterMovement()->StopMovementImmediately();
 	GetCharacterMovement()->DisableMovement();

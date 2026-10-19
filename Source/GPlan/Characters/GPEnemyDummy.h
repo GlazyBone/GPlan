@@ -32,10 +32,6 @@ protected:
     TObjectPtr<UAnimMontage> DeathMontage;
 
 private:
-
-    /** 防止重复处理死亡事件 */
-    bool bEnemyDead = false;
-
     /** 处理死亡事件 */
     UFUNCTION()
     void EnemyDead(AActor* DamageCauser);

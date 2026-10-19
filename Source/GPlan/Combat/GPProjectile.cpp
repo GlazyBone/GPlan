@@ -44,6 +44,11 @@ AGPProjectile::AGPProjectile()
 
 }
 
+void AGPProjectile::InitProjectile(float InDamage)
+{
+	Damage = InDamage;
+}
+
 void AGPProjectile::BeginPlay()
 {
 	Super::BeginPlay();

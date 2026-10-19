@@ -5,15 +5,11 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
-#include "Combat/GPWeaponBase.h"
 #include "Engine/World.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Combat/GPWeaponComponent.h"
 #include "GPlan.h"
 
-
-//////////////////////////////////////////////////////////////////////////
-// AGPPlayerCharacter
 
 AGPPlayerCharacter::AGPPlayerCharacter()
 {

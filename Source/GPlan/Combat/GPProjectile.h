@@ -29,6 +29,9 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Bullet")
 	float Damage = 20.0f;//子弹伤害
+
+	/** 初始化子弹的伤害 */
+	void InitProjectile(float InDamage);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

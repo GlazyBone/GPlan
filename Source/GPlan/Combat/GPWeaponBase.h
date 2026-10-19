@@ -17,12 +17,10 @@ class GPLAN_API AGPWeaponBase : public AActor
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this actor's properties
 	AGPWeaponBase();
 
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 protected:
@@ -49,6 +47,10 @@ protected:
 	/** 枪口火光粒子 */
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon|Effects")
 	TObjectPtr<UNiagaraSystem> MuzzleFire;
+
+	/** 子弹基础伤害 */
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon|Damage", meta = (ClampMin = "0.0", UIMin = "0.0"))
+	float BaseDamage = 25.0f;
 
 	//内部状态
 	FTimerHandle FireTimerHandle;//开火计时器

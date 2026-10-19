@@ -14,16 +14,10 @@ class GPLAN_API UGPWeaponComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:	
-	// Sets default values for this component's properties
 	UGPWeaponComponent();
 
 protected:
-	// Called when the game starts
 	virtual void BeginPlay() override;
-
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 public:
 
@@ -33,7 +27,7 @@ public:
 
     /** 角色骨骼上的武器挂点 */
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
-    FName AttachSocketName = TEXT("weapon_r");
+    FName AttachSocketName = TEXT("weapon_r_socket");
 
     /** 当前装备的武器（运行时状态，只读可见） */
     UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = "Weapon")

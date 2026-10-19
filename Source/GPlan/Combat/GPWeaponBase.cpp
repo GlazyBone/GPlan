@@ -4,6 +4,9 @@
 #include "Combat/GPWeaponBase.h"
 #include "Combat/GPProjectile.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraSystem.h"
 #include "Sound/SoundBase.h"
 #include "TimerManager.h"
 #include "GPlan.h"
@@ -44,7 +47,7 @@ FRotator AGPWeaponBase::GetAimRotation() const
 	//获取武器的持有者
 	const APawn* OwningPawn = Cast<APawn>(GetOwner());
 
-	
+
 	if (!OwningPawn)
 	{
 		UE_LOG(LogGP, Warning, TEXT("[%s] 未找到武器持有者"), *GetName());
@@ -97,6 +100,30 @@ void AGPWeaponBase::FireOnce()
 	}
 
 
+	// 优先使用枪械自身的 Muzzle Socket；
+	// 没有该 Socket 时使用武器 Actor 的变换作为回退。
+	FTransform MuzzleTransform = GetActorTransform();
+
+	if (WeaponMesh && WeaponMesh->DoesSocketExist(MuzzleSocketName))
+	{
+		MuzzleTransform = WeaponMesh->GetSocketTransform(MuzzleSocketName, RTS_World);
+	}
+	// 播放枪声：在枪口位置发声。
+	if (FireSound)
+	{
+		UGameplayStatics::PlaySoundAtLocation
+		(this, FireSound, MuzzleTransform.GetLocation(), MuzzleTransform.Rotator(), 
+			1.0f, 1.0f, 0.0f, nullptr, nullptr, this, nullptr);
+	}
+
+	// 播放枪口火光：使用枪口的世界位置和旋转。
+	if (MuzzleFire)
+	{
+		UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, MuzzleFire, MuzzleTransform.GetLocation(), 
+			MuzzleTransform.Rotator(), FVector::OneVector, true, true, ENCPoolMethod::None, true);
+	}
+
+
 }
 
 
@@ -105,7 +132,7 @@ void AGPWeaponBase::StartFire()
 {
 	//如果正在开火则返回
 	if (bIsFiring) { return; }
-	
+
 	//标记为正在开火
 	bIsFiring = true;
 
